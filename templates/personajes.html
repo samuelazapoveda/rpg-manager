@@ -1,15 +1,25 @@
+{% if error %}
+    <p style="color: red;">{{ error }}</p>
+{% endif %}
+
 <form action="/personajes" method="POST">
-  <label for="nombre">Nombre:</label>
-  <input type="text" id="nombre" name="nombre" required>
-
-  <label for="clase">Clase:</label>
-  <input type="text" id="clase" name="clase" required>
-
-  <button type="submit">Crear Personaje</button>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required>
+    
+    <label for="clase">Clase:</label>
+    <input type="text" id="clase" name="clase" required>
+    
+    <label for="nivel">nivel:</label>
+    <input type="text" id="nivel" name="nivel" required>
+    
+    <label for="vida">vida:</label>
+    <input type="text" id="vida" name="vida" required>
+    
+    <button type="submit">Crear Personaje</button>
 </form>
 
 <ul>
-  {% for personaje in lista_personajes %}
-    <li>{{ personaje.nombre }} - {{ personaje.clase }}</li>
-  {% endfor %}
+    {% for personaje in lista_personajes %}
+        <li>{{ personaje.nombre }} - {{ personaje.clase }}</li>
+    {% endfor %}
 </ul>
